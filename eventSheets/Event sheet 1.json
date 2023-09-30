@@ -1,5 +1,117 @@
 {
 	"name": "Event sheet 1",
-	"events": [],
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "rand",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 388440920167131
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-x-seconds",
+					"objectClass": "System",
+					"sid": 662845316464898,
+					"parameters": {
+						"interval-seconds": "0.1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "debug",
+					"sid": 373968263005244,
+					"parameters": {
+						"text": "rand"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 792021273939968,
+					"parameters": {
+						"variable": "rand",
+						"value": "round(random(1))"
+					}
+				}
+			],
+			"sid": 492748243277406,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 298566624150716,
+							"parameters": {
+								"variable": "rand",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-along-path",
+							"objectClass": "Enemy",
+							"sid": 891889703156296,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 426523743197895
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 234893078880894
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Enemy",
+							"sid": 919448430727591,
+							"behaviorType": "Pathfinding"
+						}
+					],
+					"sid": 788018362605827
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 587717428374045
+				}
+			],
+			"actions": [
+				{
+					"id": "find-path",
+					"objectClass": "Enemy",
+					"sid": 188276373994323,
+					"behaviorType": "Pathfinding",
+					"parameters": {
+						"x": "placeholderPlayer.X",
+						"y": "placeholderPlayer.Y"
+					}
+				}
+			],
+			"sid": 244789120134322
+		}
+	],
 	"sid": 618336227252936
 }
