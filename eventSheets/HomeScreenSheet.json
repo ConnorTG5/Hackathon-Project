@@ -1,0 +1,32 @@
+{
+	"name": "HomeScreenSheet",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 758197680514058,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "startButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 713653724316766,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 807095087991512
+		}
+	],
+	"sid": 618336227252936
+}
