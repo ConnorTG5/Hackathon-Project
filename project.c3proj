@@ -41,7 +41,8 @@
 			"wiresBackground",
 			"startButton",
 			"Keyboard",
-			"Mouse"
+			"Mouse",
+			"Wall"
 		],
 		"subfolders": []
 	},
